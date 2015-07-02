@@ -28,9 +28,15 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-2 col-centered terminal-header">
             <div class="close text-center">x</div>
-            <p>Users/guest</p>
+            <p id="header-text">guest@sethrait:~</p>
             <div class="row">
-                <div class="col-md-10 col-md-offset-2 col-centered terminal-window"><p>Currently under construction, please come back later</p></div>
+                <div class="col-md-10 col-md-offset-2 col-centered terminal-window">
+                    <p class="terminal-text">guest@sethrait:~ $</p>
+                    <form class="terminal-text">
+                        <input name="terminal" size="100" placeholder="echo Currently under construction, please come back later">
+                        <input type="hidden" value="Search">
+                    </form>
+                </div>
             </div>
 
         </div>
@@ -39,5 +45,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>

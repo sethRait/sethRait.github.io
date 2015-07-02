@@ -21,14 +21,28 @@ body{
     border: 2px solid rgba(172, 172, 172, 1);
     border-top-width: 0px;
 }
-p{
+p {
     font-weight: 700;
     color: rgb(219, 219, 219);
+}
+#header-text{
     margin-left: 20px;
     margin-left: 20px;
     position: absolute;
     top: 2px;
 }
+
+.terminal-text{
+    margin-left: -10px;
+}
+input{
+    background: transparent;
+    border: none;
+    font-weight: 700;
+}
+*::-webkit-input-placeholder {
+    color: rgb(219, 219, 219);
+
 .close{
     float: left;
     margin-left: -12px;

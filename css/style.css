@@ -34,14 +34,27 @@ p {
 
 .terminal-text{
     margin-left: -10px;
+    display: inline;
 }
+p .terminal-text{
+    float: left;
+}
+
+form{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
 input{
     background: transparent;
     border: none;
     font-weight: 700;
+    display: inline;
 }
 *::-webkit-input-placeholder {
     color: rgb(219, 219, 219);
+}
 
 .close{
     float: left;

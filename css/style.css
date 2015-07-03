@@ -33,7 +33,7 @@ p {
 }
 
 .terminal-text{
-    margin-left: -10px;
+    margin-left: -6px;
     display: inline;
 }
 p .terminal-text{
@@ -43,6 +43,7 @@ p .terminal-text{
 form{
     margin: 0;
     padding: 0;
+    display: inline;
     float: left;
 }
 
@@ -52,6 +53,11 @@ input{
     font-weight: 700;
     display: inline;
 }
+
+input:focus{
+    border: none;
+}
+
 *::-webkit-input-placeholder {
     color: rgb(219, 219, 219);
 }

@@ -55,7 +55,8 @@ input{
 }
 
 input:focus{
-    border: none;
+    outline: none;
+    color: rgb(219, 219, 219);
 }
 
 *::-webkit-input-placeholder {

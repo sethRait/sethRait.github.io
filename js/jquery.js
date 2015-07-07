@@ -4,6 +4,7 @@
 $( document ).ready(function() {
     $("form").submit(function (e) {
         e.preventDefault();
-        $(".form_wrapper").append("<p>APPENDED</p>");
+        $("form").replaceWith("<p>TEXT</p>");
+        $(".form_wrapper").append("<form class='terminal-text'><p class='terminal-text'>guest@sethrait:~ $</p> <input name='terminal' size='80' placeholder='echo Currently under construction, please come back later'> <input type='hidden' value='Search'> </form>");
     });
 });

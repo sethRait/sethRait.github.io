@@ -38,6 +38,7 @@ p {
 }
 p .terminal-text{
     float: left;
+    display: block;
 }
 
 form{
@@ -45,6 +46,10 @@ form{
     padding: 0;
     display: inline;
     float: left;
+}
+
+.form_wrapper{
+    display: block;
 }
 
 input{

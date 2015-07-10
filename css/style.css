@@ -1,7 +1,12 @@
 body{
     font-family: "Ubuntu", sans-serif;
-    background-color: #eaeaea;
+    background-color: #3d3d3d;
 }
+
+h1, h2{
+    color: #953030;
+}
+
 .col-centered{
     float: none;
     margin: 0 auto;
@@ -95,4 +100,16 @@ input:focus{
     font-size: smaller;
     bottom: -1px;
     opacity: .5;
+}
+
+.About{
+    background-color: #303F9F;
+}
+
+.Contact{
+    background-color: #3F51B5;
+}
+
+.Links{
+    background-color: #C5CAE9;
 }

@@ -1,10 +1,11 @@
 body{
     font-family: "Ubuntu", sans-serif;
-    background-color: #3d3d3d;
+    background-color: #212121;
 }
 
 h1, h2{
-    color: #953030;
+    font-size: 4em;
+    color: #FF3300;
 }
 
 .col-centered{
@@ -12,18 +13,18 @@ h1, h2{
     margin: 0 auto;
 }
 .terminal-header{
-    background-color: #757575;
+    background-color: #455A64;
     height: 625px;
     border-top-right-radius: 1%;
     border-top-left-radius: 1%;
 }
 .terminal-window{
-    background-color: #000000;
+    background-color: #37474F;
     width: 100%;
     height: 600px;
     position: absolute;
     bottom: 0px;
-    border: 2px solid rgba(172, 172, 172, 1);
+    border: 2px solid #455A64;
     border-top-width: 0px;
 }
 p {
@@ -86,8 +87,8 @@ input:focus{
 .close{
     float: left;
     margin-left: -12px;
-    background-color: red;
-    border: 2px solid rgba(172, 172, 172, 1);
+    background-color: #FF3300;
+    border: 1.5px solid rgba(172, 172, 172, 1);
     border-radius: 11px;
     box-shadow: 1px 1px 1px black;
     color: rgba(172, 172, 172, 1);
@@ -99,17 +100,17 @@ input:focus{
     position: relative;
     font-size: smaller;
     bottom: -1px;
-    opacity: .5;
+    opacity: .8;
 }
 
 .About{
-    background-color: #303F9F;
+    background-color: #C62828;
 }
 
 .Contact{
-    background-color: #3F51B5;
+    background-color: #E53935;
 }
 
 .Links{
-    background-color: #C5CAE9;
+    background-color: #EF5350;
 }

@@ -9,9 +9,7 @@ $( document ).ready(function() {
     getWidth();
     $(".form_input").keydown(function(){
        if(event.keyCode==13){
-           $(".terminal-window").on("submit", "form", function (e) { //when form is submitted
-               submitCommand(e);
-           });
+           submitCommand(event);
        }
     });
 });
@@ -20,10 +18,6 @@ $( document ).ready(function() {
 function getWidth(){
     var textAreaWidth=$("form").width()-$("#p_term").width();
     $("textarea").css("width", textAreaWidth-5);
-    console.log("form: "+$("form").width());
-    console.log("p_term: "+$("#p_term").width());
-    console.log("textarea: "+textAreaWidth);
-
 }
 
 //triggered when user submits a command to the console
@@ -33,6 +27,7 @@ function submitCommand(e){
     processCommand(usrCommand);
     $(".form_wrapper").replaceWith("<p class='new-terminal-text' style='margin-left: -12px'>"+loc+usrCommand+"</p>"+"<br>");
     $("#terminal-window").append("<div class='form_wrapper'><form class='terminal-text'><p class='terminal-text'>guest@sethrait:~ $</p> <textarea class='form_input' name='terminal' placeholder='echo Currently under construction, please come back later'></textarea></form></div>");
+    getWidth();
 }
 
 //processes the contents of the user submitted command

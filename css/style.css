@@ -1,10 +1,14 @@
 body{
     font-family: "Ubuntu", sans-serif;
-    background-color: #212121;
+    background-color: #000000;
 }
 
 h1, h2{
     font-size: 4em;
+    color: #FF3300;
+}
+h4{
+    font-size: 2em;
     color: #FF3300;
 }
 
@@ -74,6 +78,7 @@ textarea{
     display: inline;
     padding: 0;
     margin-top: 0;
+    resize: none;
 }
 
 textarea:focus{
@@ -84,7 +89,7 @@ textarea:focus{
 
 .close{
     float: left;
-    margin-left: -12px;
+    margin-left: 0;
     background-color: #FF3300;
     border: 1.5px solid rgba(172, 172, 172, 1);
     border-radius: 11px;
@@ -101,14 +106,25 @@ textarea:focus{
     opacity: .8;
 }
 
-.About{
-    background-color: #C62828;
+#About{
+    background-color: #951e1e;
 }
 
-.Contact{
-    background-color: #E53935;
+#Contact{
+    background-color: #b52d2a;
 }
 
-.Links{
-    background-color: #EF5350;
+#Links{
+    background-color: #c34441;
+}
+
+.section p{
+    font-size: 1.5em;
+}
+.img-container{
+    border-radius: 50%;
+    background-color: #37474F;
+}
+img{
+    width: 100%;
 }

@@ -2,7 +2,7 @@
  * Created by srait on 7/2/2015.
  */
 
-var commands=['ls', 'cd', 'cat', 'grep', 'man', 'about', 'contact', 'resume'];
+var commands=['ls', 'cd', 'cat', 'grep', 'man', 'about', 'contact', 'links', 'resume'];
 var loc="guest@sethrait:~ $ ";
 
 $( document ).ready(function() {
@@ -44,5 +44,21 @@ function processCommand(usrCommand){
 
 //executes the user's command
 function execute(command){  //WRITE THIS FUNCTION
-    $("#terminal-window").append("<p>Command Found!");
+    switch(command) {
+        case commands[5]:
+            $('html, body').animate({
+                scrollTop: $("#About").offset().top
+            }, 1000);
+            break;
+        case commands[6]:
+            $('html, body').animate({
+                scrollTop: $("#Contact").offset().top
+            }, 1000);
+            break;
+        case commands[7]:
+            $('html, body').animate({
+                scrollTop: $("#Links").offset().top
+            }, 1000);
+            break;
+    }
 }

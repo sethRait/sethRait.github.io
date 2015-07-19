@@ -27,8 +27,13 @@ function submitCommand(e){
     var usrCommand=$('.form_input').val();
     processCommand(usrCommand);
     $(".form_wrapper").replaceWith("<p class='new-terminal-text'>"+loc+usrCommand+"</p>"+"<br>");
-    $("#terminal-window").append("<div class='form_wrapper'><form class='terminal-text'><p class='terminal-text'>guest@sethrait:~ $</p> <textarea autofocus class='form_input' name='terminal' placeholder='echo Currently under construction, please come back later'></textarea></form></div>");
+    $("#terminal-window").append("<div class='form_wrapper'><form class='terminal-text'><p id='p_term' class='terminal-text'>guest@sethrait:~ $ </p><textarea autofocus class='form_input' name='terminal' placeholder='Currently under construction, please come back later'></textarea></form></div>");
     getWidth();
+    $(".form_input").keydown(function(){
+        if(event.keyCode==13){
+            submitCommand(event);
+        }
+    });
 }
 
 //processes the contents of the user submitted command

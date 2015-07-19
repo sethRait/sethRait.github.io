@@ -32,6 +32,11 @@ h4{
     border-top-width: 0px;
     padding: 0;
 }
+
+#terminal-window p{
+    margin-bottom: 0;
+}
+
 p {
     font-weight: 700;
     color: rgb(219, 219, 219);

@@ -112,15 +112,15 @@ textarea:focus{
 }
 
 #About{
-    background-color: #363636; /*#951e1e*/
+    background-color: #37474F; /*#37474F951e1e*/
 }
 
 #Contact{
-    background-color: #525252; /*#b52d2a*/
+    background-color: #273338; /*#b52d2a*/
 }
 
 #Links{
-    background-color: #616161; /*#c34441*/
+    background-color: #1b2327; /*#c34441*/
 }
 
 .section p{

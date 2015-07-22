@@ -5,11 +5,11 @@ body{
 
 h1, h2{
     font-size: 4em;
-    color: #FF3300;
+    color: #dd0000;
 }
 h4{
     font-size: 2em;
-    color: #FF3300;
+    color: #dd0000;
 }
 
 .col-centered{
@@ -95,7 +95,7 @@ textarea:focus{
 .close{
     float: left;
     margin-left: 0;
-    background-color: #FF3300;
+    background-color: #dd0000;
     border: 1.5px solid rgba(172, 172, 172, 1);
     border-radius: 11px;
     box-shadow: 1px 1px 1px black;
@@ -112,15 +112,15 @@ textarea:focus{
 }
 
 #About{
-    background-color: #951e1e;
+    background-color: #363636; /*#951e1e*/
 }
 
 #Contact{
-    background-color: #b52d2a;
+    background-color: #525252; /*#b52d2a*/
 }
 
 #Links{
-    background-color: #c34441;
+    background-color: #616161; /*#c34441*/
 }
 
 .section p{

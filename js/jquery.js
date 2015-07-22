@@ -2,7 +2,7 @@
  * Created by srait on 7/2/2015.
  */
 
-var commands=['ls', 'cd', 'cat', 'grep', 'man', 'about', 'contact', 'links', 'resume'];
+var commands=['ls', 'cd', 'cat', 'grep', 'help', 'about', 'contact', 'links', 'resume'];
 var loc="guest@sethrait:~ $ ";
 
 $( document ).ready(function() {

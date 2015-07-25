@@ -133,3 +133,7 @@ textarea:focus{
 img{
     width: 100%;
 }
+
+#Links img{
+    width: 10em;
+}

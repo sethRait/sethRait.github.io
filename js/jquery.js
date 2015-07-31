@@ -8,6 +8,7 @@ var loc="guest@sethrait:~ $ ";
 $( document ).ready(function() {
     getWidth();
     $(".full-height").height($(window).height());
+    getHeight();
     $(".form_input").keydown(function(){
        if(event.keyCode==13){
            submitCommand(event);
@@ -19,6 +20,13 @@ $( document ).ready(function() {
 function getWidth(){
     var textAreaWidth=$("form").width()-$("#p_term").width();
     $("textarea").css("width", textAreaWidth-5);
+}
+
+//gets the height of the window and applies it to the first two divs
+function getHeight(){
+    var pageHeight = $(window).height();
+    var headerHeight = $(".page-header").height();
+    $(".top-div").height(pageHeight-headerHeight);
 }
 
 //triggered when user submits a command to the console
@@ -48,7 +56,7 @@ function processCommand(usrCommand){
 }
 
 //executes the user's command
-function execute(command){  //WRITE THIS FUNCTION
+function execute(command){
     switch(command) {
         case commands[3]:
             $("#terminal-window").append("<p id='p_term' class='terminal-text'>The following commands are acceptable for use: <br>ls, cd, cat, grep, about, contact, links, resume </p>");

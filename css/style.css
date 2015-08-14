@@ -84,6 +84,7 @@ textarea{
     padding: 0;
     margin-top: 0;
     resize: none;
+    autofocus: true;
 }
 
 textarea:focus{

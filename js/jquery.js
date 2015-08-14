@@ -59,7 +59,7 @@ function processCommand(usrCommand){
 function execute(command){
     switch(command) {
         case commands[3]:
-            $("#terminal-window").append("<p id='p_term' class='terminal-text'>The following commands are acceptable for use: <br>ls, cd, cat, grep, about, contact, links, resume </p>");
+            $("#terminal-window").append("<p id='p_term' class='new-terminal-text'>The following commands are acceptable for use: <br>ls, cd, cat, grep, about, contact, links, resume </p><br>");
             break;
         case commands[4]:
             $('html, body').animate({

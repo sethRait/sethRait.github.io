@@ -4,6 +4,7 @@
 
 var commands=['ls', 'cd', 'grep', 'help', 'about', 'contact', 'links', 'resume'];
 var loc="guest@sethrait:~ $ ";
+var count=0;
 
 $( document ).ready(function() {
     getWidth();
@@ -31,10 +32,15 @@ function getHeight(){
 
 //triggered when user submits a command to the console
 function submitCommand(e){
+    count++;
     e.preventDefault();
     var usrCommand=$('.form_input').val();
     processCommand(usrCommand);
-    $(".form_wrapper").replaceWith("<br><p class='new-terminal-text'>"+loc+usrCommand+"</p>"+"<br>");
+    if(count>1) {
+        $(".form_wrapper").replaceWith("<br><p class='new-terminal-text'>" + loc + usrCommand + "</p>" + "<br>");
+    }else{
+        $(".form_wrapper").replaceWith("<p class='new-terminal-text'>" + loc + usrCommand + "</p>" + "<br>");
+    }
     $("#terminal-window").append("<br><div class='form_wrapper'><form class='terminal-text'><p id='p_term' class='terminal-text'>guest@sethrait:~ $ </p><textarea class='form_input' name='terminal' placeholder='Currently under construction, please come back later'></textarea></form></div>");
     getWidth();
     $(".form_input").keydown(function(){
@@ -59,7 +65,7 @@ function processCommand(usrCommand){
 function execute(command){
     switch(command) {
         case commands[3]:   //help
-            $("#terminal-window").append("<p id='p_term' class='new-terminal-text'>The following commands are acceptable for use: <br>ls, cd, cat, grep, about, contact, links, resume</p>");
+            $("#terminal-window").append("<p id='p_term' class='new-terminal-text'>The following commands are acceptable for use: ls, cd, cat, grep, about, contact, links, resume</p>");
             break;
         case commands[4]:   //about
             $('html, body').animate({

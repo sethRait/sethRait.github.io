@@ -19,8 +19,9 @@ $( document ).ready(function() {
 
 //gets the width of the terminal window to be used for the textarea
 function getWidth(){
+    console.log("Start");
     var textAreaWidth=$("form").width()-$("#p_term").width();
-    $("textarea").css("width", textAreaWidth-5); //5 as buffer
+    return textAreaWidth;
 }
 
 //gets the height of the window and applies it to the first two divs
@@ -36,13 +37,14 @@ function submitCommand(e){
     e.preventDefault();
     var usrCommand=$('.form_input').val();
     processCommand(usrCommand);
-    if(count>1) {
-        $(".form_wrapper").replaceWith("<br><p class='new-terminal-text'>" + loc + usrCommand + "</p>" + "<br>");
-    }else{
-        $(".form_wrapper").replaceWith("<p class='new-terminal-text'>" + loc + usrCommand + "</p>" + "<br>");
-    }
+    var textAreaWidth=0;
+    $(".form_wrapper").replaceWith("<p class='new-terminal-text'>" + loc + usrCommand + "</p>");
     $("#terminal-window").append("<br><div class='form_wrapper'><form class='terminal-text'><p id='p_term' class='terminal-text'>guest@sethrait:~ $ </p><textarea class='form_input' name='terminal' placeholder='Currently under construction, please come back later'></textarea></form></div>");
-    getWidth();
+    if(textAreaWidth===0) {
+        textAreaWidth = getWidth();
+        console.log("Width:"+textAreaWidth);
+    }
+    $("textarea").css("width", textAreaWidth-5); //5 as buffer
     $(".form_input").keydown(function(){
         if(event.keyCode==13){
             submitCommand(event);

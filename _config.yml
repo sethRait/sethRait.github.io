@@ -2,9 +2,9 @@ title: Seth Rait
 description: >
   Student, Coder, Sailor, Musician
 baseurl: ""
-url: "https://github.com/siawyoung/immaculate"
+url: "http://sethrait.com"
 paginate:	2 # The number of posts to show per page on your homepage
-name: "Lau Siaw Young"
+name: "Seth Rait"
 markdown: kramdown
 permalink: none
 kramdown:

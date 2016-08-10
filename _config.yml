@@ -3,6 +3,8 @@ description: >
   Student, Coder, Sailor, Musician
 baseurl: ""
 url: "http://sethrait.com"
+author:
+  twitter: sethrait
 paginate:	2 # The number of posts to show per page on your homepage
 name: "Seth Rait"
 markdown: kramdown
@@ -11,4 +13,5 @@ kramdown:
   parse_block_html: true
 gems:
   - jekyll-paginate
+  - jekyll-seo-tag
 google_analytics: UA-82203524-1

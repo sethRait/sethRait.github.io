@@ -25,9 +25,22 @@ article {
 }
 
 header {
-  margin-top: 20px;
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 10em;
+  position: fixed;
+  width: 80%;
 }
 
+
+@media screen and (max-width: 1460px) {
+    header {
+	text-align: left;
+	padding-right: 1em;
+	position: relative;
+	width: inherit;
+    }
+}
 .post-meta {
   margin-top: 10px;
 }

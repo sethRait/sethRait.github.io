@@ -7,7 +7,7 @@ author:
   twitter: sethrait
 paginate:	2 # The number of posts to show per page on your homepage
 name: "Seth Rait"
-markdown: maruku 
+markdown: Kramdown 
 permalink: none
 kramdown:
   parse_block_html: true

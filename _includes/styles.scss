@@ -37,12 +37,15 @@ header {
 }
 
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 90em) {
     header {
 	text-align: left;
 	padding-right: 1em;
+	padding-bottom: 2em;
 	position: relative;
-	width: inherit;
+	width: 100%;
+	float: left;
+	margin-left: inherit;
 	z-index: 10000;
     }
 }

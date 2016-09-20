@@ -29,7 +29,10 @@ header {
   text-align: right;
   padding-right: 10em;
   position: fixed;
-  width: 80%;
+  width: 40%;
+  display: inline-block;
+  float: right;
+  margin-left: 40%;
   z-index: 100000;
 }
 

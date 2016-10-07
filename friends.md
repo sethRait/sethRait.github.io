@@ -10,4 +10,4 @@ permalink: /friends/
 
 [Katherine](http://katherines.website), Senior CS major at Case Western Reserve University, musician, coffee-snob, fellow Buffalonian.
 
-[Julianne](http://julianneburke.myportfolio.com), Senior New Media Design major at RIT, UX/UI Designer, artist, wonderful human being, fellow Buffalonian.
+[Julianne](http://juliannelburke.myportfolio.com), Senior New Media Design major at RIT, UX/UI Designer, artist, wonderful human being, fellow Buffalonian.

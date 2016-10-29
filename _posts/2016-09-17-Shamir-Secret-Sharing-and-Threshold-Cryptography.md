@@ -1,4 +1,4 @@
-----
+---
 layout: post
 title: Shamir Secret Sharing and Threshold Cryptography
 ---

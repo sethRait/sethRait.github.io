@@ -2,6 +2,7 @@
 layout: post
 title: Shamir Secret Sharing and Threshold Cryptography
 ---
+
 **Disclaimer:** This post is going to be technical, unlike my others up to this point.  That being said, my goal is to ensure most people can understand what I'm talking about, so no prior knowledge of advanced math, computer science, or cryptography is needed to get an intuition about what I'm saying.  In fact, you may even find this *more* interesting if you don't have a technical background.
 
 ## Why share a secret?

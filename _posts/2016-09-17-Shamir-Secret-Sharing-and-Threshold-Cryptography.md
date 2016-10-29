@@ -1,4 +1,4 @@
----
+----
 layout: post
 title: Shamir Secret Sharing and Threshold Cryptography
 ---
@@ -10,7 +10,7 @@ I know sharing a secret sounds counterintuitive, but hear me out.  Imagine you'r
 Let's try a more realistic scenario,  imagine you have a [really good password](https://xkcd.com/936/), but you're afraid you're going to forget it.  Wouldn't it be nice if you could share this password with a bunch of different people, so that if you forgot it, they could just tell it to you?  The only downside here is that now all these people know your password, and that is not an ideal situation, when you most likely only have one password for all of your online accounts anyway.  As it turns out, we can do this very sharing without revealing your password to anyone.  All you need to know is some basic [magic](https://en.wikipedia.org/wiki/Mathematics).
 
 ## How to Share a secret
-We'll start by defining what a secret is.  A secret can be any positive integer.  This means it can also be any string encoded as a series of bytes.  Take the string *abc* for example.  *abc* in ASCII this can be represented by the bytes: *01100001 01100010 01100011* or by the integers: *97 98 99*.  They're all just numbers so they can all be shared.  As an added bonus, depending on the specific encoding used, we can encrypt passwords with special characters in them too!
+We'll start by defining what a secret is.  A secret can be any positive integer.  This means it can also be any string encoded as a series of bytes.  Take the string *abc* for example.  *abc* in ASCII can be represented by the bytes: *01100001 01100010 01100011* or by the integers: *97 98 99*.  They're all just numbers so they can all be shared.  As an added bonus, depending on the specific encoding used, we can encrypt passwords with special characters in them too!
 
 ### The Scheme
 Some notation first.  We're going to use a mixture of some standard and some not-so-standard notation because I'm not a cryptographer and I think my way is simpler to understand.  We'll call our secret $$S$$ and say that the number of shares we want to create is $$t$$ and the threshold to reconstruct the secret is $$n$$.  This is denoted as $$S : (t, n)$$.

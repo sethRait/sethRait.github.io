@@ -3,11 +3,9 @@ layout: default
 ---
 
 <main>
-
-  <div>
-    {% for post in paginator.posts %}
+<div class="articles">
+    {% for post in site.posts %}
       <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
-
           <div class="post_title">
             <h2 itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
           </div>
@@ -16,15 +14,16 @@ layout: default
             <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
           </div>
 
-          <section itemprop="description">
-            {{ post.content | markdownify }}
-          </section>
+          <!--<section itemprop="description">
+ 			<a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+			{{ post.content | markdownify }}
+	   </section>--!>
 
       </article>
     {% endfor %}
-  </div>
+</div>
 
-  <nav role="navigation">
+  <!--<nav role="navigation">
     {% if paginator.total_pages > 1 %}
     <div class="pagination">
       {% if paginator.previous_page %}
@@ -50,7 +49,7 @@ layout: default
       {% endif %}
     </div>
     {% endif %}
-  </nav>
+  </nav>-->
 
 </main>
 

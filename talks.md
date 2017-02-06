@@ -1,5 +1,8 @@
-# Talks I've given:
-
+---
+layout: page
+title: Talks
+permalink: /talks/
+---
 [Intro to CLI](https://docs.google.com/presentation/d/1TTJCCIsirZPOYgPRIeWx2zdDvl4SI9KGNJrSRHqZDY4/edit?usp=sharing)
 
 [Intro to Git](https://docs.google.com/presentation/d/1Flg9vQeiOVfW4NKS5peAAEYy4d4qAAbCKNz8M18LDs8/edit?usp=sharing)

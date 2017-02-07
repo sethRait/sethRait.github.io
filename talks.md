@@ -2,6 +2,7 @@
 layout: page
 title: Talks
 permalink: /talks/
+displaytop: false
 ---
 [Intro to CLI](https://docs.google.com/presentation/d/1TTJCCIsirZPOYgPRIeWx2zdDvl4SI9KGNJrSRHqZDY4/edit?usp=sharing)
 

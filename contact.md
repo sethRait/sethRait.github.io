@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+displaytop: true
 ---
 Take a look at some of my [projects](https://github.com/sethrait)
 

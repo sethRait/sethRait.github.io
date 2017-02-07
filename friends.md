@@ -2,6 +2,7 @@
 layout: page
 title: Friends 
 permalink: /friends/
+displaytop: true
 ---
 ### chchchcheck it:
 [Ryan](https://rmarcus.info/blog), PhD candidate at Brandeis University, scientist, argument-maker, opinionated.

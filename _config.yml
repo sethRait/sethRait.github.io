@@ -8,7 +8,7 @@ author:
 paginate:	3 # The number of posts to show per page on your homepage
 name: "Seth Rait"
 markdown: Kramdown 
-permalink: none
+permalink: :title 
 kramdown:
   parse_block_html: true
 gems:

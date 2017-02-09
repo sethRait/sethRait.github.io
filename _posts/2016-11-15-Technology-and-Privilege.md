@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Technology and Privilege
+tags:
+  - tech
+  - social issues
 ---
 
 Intersectionality is a weird thing to think about.  This is the reason people have trouble identifying or enumerating their privilege, and why I myself had this problem.  On one hand, both my sexual orientation and my religion put me squarely in the minority/marginalized peoples category.  On the other, more dominant hand (my left hand), I have many distinct privileges.   I am a student at a rather prestigious [university](http://www.brandeis.edu/), I have disposable income, will most likely never have to worry about finding work, I am able bodied, I am male, and I am white.  This post is about realizing both my privilege and my place, and what some of my responsibilities are as a result.

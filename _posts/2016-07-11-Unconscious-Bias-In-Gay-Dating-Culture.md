@@ -1,6 +1,9 @@
 ---
 layout: post
-title: Unconscious Bias in Gay Dating Culture 
+title: Unconscious Bias in Gay Dating Culture
+tags:
+  - LGBTQ
+  - social issues
 ---
 
 [Grindr](http://www.grindr.com/), a popular gay dating and hookup app (with notoriously poor reliability), holds an important place in the gay community.  It has 5-6 million monthly active users and 2.4 million daily active users [(source)](http://venturebeat.com/2016/04/05/mobile-app-analytics-how-grindr-monetizes-6-million-active-users-webinar/) in 196 countries (as of April, 2016).  That's a lot of people, a vast majority of whom are gay men.  This large userbase gives Grindr a platform to spread ideas, which it does regularly.  Grindr commonly supports urgent and developing causes through pop-up ads on the app's home screen.
@@ -9,7 +12,7 @@ title: Unconscious Bias in Gay Dating Culture
 
 ## Grindr's New Survey
 
-Recently, Grindr has been sending out a survey to some of its active users.  I didn't receive the survey, so I only found out about this secondhand.  The survey looks like this (sorry for the low-res): 
+Recently, Grindr has been sending out a survey to some of its active users.  I didn't receive the survey, so I only found out about this secondhand.  The survey looks like this (sorry for the low-res):
 ![alt text](/assets/images/grindr_survey.jpg "Really, I didn't take the picture, don't yell at me")
 For those who didn't take the time to read, this survey is asking about whether users would appreciate a new Grindr filter, one predicated on HIV status.  The way Grindr filters work is, a user sets a preference, be it for body type, relationship status, or other various features of a potential match, and those for whom this user's filters don't correspond are invisible to the user when his filter is applied.  For example, if I selected a filter wherein I was only interested in seeing profiles of users under the age of 99, then no user over that age would appear to me on the app.  However, a user over that age could still contact me, and as long as I met the characteristics described in his filters, my profile would show up on his feed.
 So applying this same logic to an HIV filter would mean that a user could choose to see exclusively HIV positive/negative users, but that user could still be contacted and seen by users they cannot see.

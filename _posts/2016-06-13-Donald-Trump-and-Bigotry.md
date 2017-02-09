@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Donald Trump and Bigotry
+tags:
+  - politics
 ---
 
 Donald Trump is quite the [talker](http://time.com/4367120/orlando-shooting-donald-trump-transcript/).

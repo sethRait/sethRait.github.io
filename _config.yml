@@ -5,10 +5,9 @@ baseurl: ""
 url: "http://sethrait.com"
 author:
   twitter: sethrait
-paginate:	3 # The number of posts to show per page on your homepage
 name: "Seth Rait"
-markdown: Kramdown 
-permalink: :title 
+markdown: Kramdown
+permalink: :title
 kramdown:
   parse_block_html: true
 gems:

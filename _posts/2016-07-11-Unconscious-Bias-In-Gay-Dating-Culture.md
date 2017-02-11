@@ -3,7 +3,7 @@ layout: post
 title: Unconscious Bias in Gay Dating Culture
 tags:
   - LGBTQ
-  - social issues
+  - Social Issues
 ---
 
 [Grindr](http://www.grindr.com/), a popular gay dating and hookup app (with notoriously poor reliability), holds an important place in the gay community.  It has 5-6 million monthly active users and 2.4 million daily active users [(source)](http://venturebeat.com/2016/04/05/mobile-app-analytics-how-grindr-monetizes-6-million-active-users-webinar/) in 196 countries (as of April, 2016).  That's a lot of people, a vast majority of whom are gay men.  This large userbase gives Grindr a platform to spread ideas, which it does regularly.  Grindr commonly supports urgent and developing causes through pop-up ads on the app's home screen.

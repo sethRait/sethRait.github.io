@@ -2,7 +2,7 @@
 layout: post
 title: How the Internet Works Part I
 tags:
-  - tech
+  - Tech
 ---
 
 You use the Internet every day.  Surfing the web, watching Netflix, and writing emails, are all part of your daily life, yet you've most likely never considered how any of it actually *works*.  Probably because you have better things to do than think about matters that don't concern you, but luckily enough, however, I've thought long and hard about this topic and have decided to impart my knowledge to the three people who actually read my blog (hi dad).  This is part 1, expect part 2 shortly.  In this post, I explain what exactly the Internet *is*, and give a little history of how it came to be.  In the next post, I'll get into the details of how it works.

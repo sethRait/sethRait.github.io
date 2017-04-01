@@ -44,7 +44,9 @@ header {
   z-index: 100000;
 }
 
-
+.name-link {
+	text-decoration: none !important;
+}
 @media screen and (max-width: 80em) {
     header {
 	text-align: left;

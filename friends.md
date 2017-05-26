@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Friends 
+title: Friends
 permalink: /friends/
 displaytop: true
 ---
@@ -11,4 +11,4 @@ displaytop: true
 
 [Julianne](http://burkedesign.us), Senior New Media Design major at RIT, UX/UI Designer, artist, wonderful human being, fellow Buffalonian.
 
-[Sofiya](http://sofiya.io), Senior CS major at Brandeis University, designer extroadinaire, general cool person.
+(Saved the best for last)[Sofiya](http://sofiya.io), Senior CS major at Brandeis University, designer extraordinaire, general cool person.

@@ -5,10 +5,10 @@ permalink: /friends/
 displaytop: true
 ---
 ### chchchcheck it:
-[Ryan](https://rmarcus.info/blog), PhD candidate at Brandeis University, scientist, argument-maker, opinionated.
+[Ryan](https://rmarcus.info/blog), PhD candidate @ Brandeis University, scientist, argument-maker, opinionated.
 
-[Katherine](http://katherines.website), Senior CS major at Case Western Reserve University, musician, coffee-snob, fellow Buffalonian.
+[Katherine](http://katherines.website), Release Manager and Software Developer @ Salesforce, musician, coffee-snob, fellow Buffalonian.
 
-[Julianne](http://burkedesign.us), Senior New Media Design major at RIT, UX/UI Designer, artist, wonderful human being, fellow Buffalonian.
+[Julianne](http://burkedesign.us), Interaction Designer @ Helios, artist, wonderful human being, fellow Buffalonian.
 
-[Sofiya](http://sofiya.io), Senior CS major at Brandeis University, designer extroadinaire, general cool person.
+[Sofiya](http://sofiya.io), Software Engineer @ EdX, designer extroadinaire, general cool person.

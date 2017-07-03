@@ -4,6 +4,8 @@ title: Talks
 permalink: /talks/
 displaytop: false
 ---
+[Transport Layer Security](https://docs.google.com/presentation/d/18_MrKvrKwyrnzlVgjY8ewVm0gMei1ZqO_TBSHXurjT8/edit?usp=sharing)
+
 [Adversarial Neural Cryptography (Paper by Google Brain)](https://docs.google.com/presentation/d/1tQkgUaKnJxGzA_baAxMIWhig_i8KEVLK4YfYv0axMXI/edit?usp=sharing)
 
 [Intro to Cryptography (Co-written with Arya Boudaie)](https://docs.google.com/presentation/d/1MXfMufdQIRFoKF0JLBAseTfX56yeRR7TFsdMrzpSF7k/edit?usp=sharing)

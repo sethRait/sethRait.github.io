@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ⚡ lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" >
+<link rel="icon"  type="image/png"    href="assets/images/me.png">
   <head>
-<meta property="og:image" content="assets/images/me.png" />
-
+  <meta property="og:image" content="/assets/images/me.png" />
+  <meta name="google-site-verification" content="HQm7o1z9I5dPPteC5I4KSf1gCUcJbh8zL7QUzS-qbh4" />
   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,37 +13,37 @@
   <meta name="description" content="Student, Coder, Sailor, Musician
 ">
 
-  <link rel="canonical" href="https://github.com/siawyoung/immaculate/assets/blog.html">
-  <link rel="alternate" type="application/rss+xml" title="Seth Rait" href="https://github.com/siawyoung/immaculate/feed.xml">
+  <link rel="canonical" href="http://sethrait.com/assets/blog">
+  <link rel="alternate" type="application/rss+xml" title="Seth Rait" href="http://sethrait.com/feed.xml">
 
   <script type="application/ld+json">
   
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "https://github.com/siawyoung/immaculate/assets/blog.html",
+  "mainEntityOfPage": "http://sethrait.com/assets/blog",
   "headline": "Seth Rait",
-  "datePublished": "2016-08-07T19:46:41-07:00",
-  "dateModified": "2016-08-07T19:46:41-07:00",
+  "datePublished": "2017-07-10T15:48:17-04:00",
+  "dateModified": "2017-07-10T15:48:17-04:00",
   "description": "Student, Coder, Sailor, Musician
 ",
   "author": {
     "@type": "Person",
-    "name": "Lau Siaw Young"
+    "name": "Seth Rait"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Seth Rait",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://github.com/siawyoung/immaculate",
+      "url": "http://sethrait.com",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "https://github.com/siawyoung/immaculate",
+    "url": "http://sethrait.com",
     "height": 60,
     "width": 60
   }
@@ -52,7 +53,12 @@
 
   <style amp-custom>
   
-  /* Import ET Book styles
+  /* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
+/* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 @font-face {
   font-family: "et-book";
@@ -88,15 +94,14 @@ body {
   margin-right: auto;
   padding-left: 12.5%;
   font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  background-color: #fffff4;
-  color: #111;
-  color: #111;
+  background-color: #FFF1E6;
+  color: #632636;
   max-width: 1400px;
   counter-reset: sidenote-counter; }
 
 h1 {
   font-weight: 400;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
   font-size: 3.2rem;
   line-height: 1; }
@@ -108,6 +113,9 @@ h2 {
   margin-bottom: 0;
   font-size: 2.2rem;
   line-height: 1; }
+
+.post_title h2 {
+  font-size: 2rem; }
 
 h3 {
   font-style: italic;
@@ -133,12 +141,15 @@ p.subtitle {
 
 article {
   position: relative;
-  padding: 5rem 0rem; }
+  padding: 5rem 0rem;
+  line-height: 50%; }
 
-section {
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
+hr {
+  display: none; }
 
+/*section { padding-top: 1rem;
+          padding-bottom: 1rem; }
+*/
 p, ol, ul, .pagination a, .pagination em {
   font-size: 1.4rem; }
 
@@ -179,13 +190,11 @@ blockquote .footer {
   text-align: right; }
 
 ol, ul {
-  width: 45%;
+  width: 85%;
   -webkit-padding-start: 5%;
   -webkit-padding-end: 5%; }
 
-li {
-  padding: 0.5rem 0; }
-
+/*li { padding: 0.5rem 0; }*/
 figure {
   padding: 0;
   border: 0;
@@ -224,7 +233,6 @@ a:link {
   -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
   background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
-  text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
   background-position: 0% 93%, 100% 93%, 0% 93%; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -541,13 +549,52 @@ amp-img {
   background-color: grey; }
 
 article {
-  padding: 2.5rem 0; }
+  padding: 0.3rem 0; }
+
+time {
+  font-size: 1.3rem; }
+
+.articles {
+  padding-top: 10rem; }
 
 header {
-  margin-top: 20px; }
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 10em;
+  position: fixed;
+  width: 40%;
+  display: inline-block;
+  float: right;
+  margin-left: 40%;
+  z-index: 100000; }
 
+.name-link {
+  text-decoration: none !important; }
+
+@media screen and (max-width: 80em) {
+  header {
+    text-align: left;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-left: inherit;
+    z-index: 10000; } }
 .post-meta {
-  margin-top: 10px; }
+  font-size: 1.3rem;
+  line-height: normal; }
+
+.tag {
+  font-size: 0.8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: 2px solid #fbe6d6;
+  border-radius: 5px;
+  background-color: #fbe6d6;
+  text-decoration-line: none;
+  padding: 2px 2px 2px 4px; }
 
 pre {
   width: 52.5%;
@@ -570,27 +617,60 @@ code {
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Seth Rait - Student, Coder, Sailor, Musician</title>
+<meta property="og:title" content="Seth Rait" />
+<meta name="description" content="Student, Coder, Sailor, Musician" />
+<meta property="og:description" content="Student, Coder, Sailor, Musician" />
+<link rel="canonical" href="http://sethrait.com/assets/blog" />
+<meta property="og:url" content="http://sethrait.com/assets/blog" />
+<meta property="og:site_name" content="Seth Rait" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "headline": "Seth Rait",
+    "description": "Student, Coder, Sailor, Musician",
+    "url": "http://sethrait.com/assets/blog"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
 </head>
 
   <body>
-    <header>
+	      <header>
   <div class="page-links">
     <a class="page-link" href="/">Home</a>
     
       
       • <a class="page-link" href="/about/">About</a>
       
-    
+	  
       
-    
+	  
       
       • <a class="page-link" href="/contact/">Contact</a>
       
-    
+	  
       
-    
+      • <a class="page-link" href="/friends/">Friends</a>
+      
+	  
+      
+	  
+      
+	  
+      
+	  
+	   • <a class="page-link" href="https://sethrait.com/resume.pdf"> Resume </a>
+	   • <a class="page-link" href="https://sethrait.com/tag.html"> Tags </a>
   </div>
-</header>
+  <section>
+	  <h1><a class="name-link" href="http://sethrait.com">Seth Rait</a></h1>
+      <h3>Student, Coder, Sailor, Musician
+</h3>
+  </section>
+  </header>
 
 
     <main>
@@ -612,5 +692,35 @@ code {
 </main>
 
 
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82203524-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Seth Rait - Student, Coder, Sailor, Musician</title>
+<meta property="og:title" content="Seth Rait" />
+<meta name="description" content="Student, Coder, Sailor, Musician" />
+<meta property="og:description" content="Student, Coder, Sailor, Musician" />
+<link rel="canonical" href="http://sethrait.com/assets/blog" />
+<meta property="og:url" content="http://sethrait.com/assets/blog" />
+<meta property="og:site_name" content="Seth Rait" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "headline": "Seth Rait",
+    "description": "Student, Coder, Sailor, Musician",
+    "url": "http://sethrait.com/assets/blog"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
   </body>
 </html>

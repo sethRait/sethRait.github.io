@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html ⚡ lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" >
+<link rel="icon"  type="image/png"    href="assets/images/me.png">
+  <head>
+  <meta property="og:image" content="/assets/images/me.png" />
+  <meta name="google-site-verification" content="HQm7o1z9I5dPPteC5I4KSf1gCUcJbh8zL7QUzS-qbh4" />
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>DRAAM Deep Auto-Associative Memory</title>
+  <meta name="description" content="Abstract">
+
+  <link rel="canonical" href="http://sethrait.com/Deep-Recursive-AutoAssociative-Memory">
+  <link rel="alternate" type="application/rss+xml" title="Seth Rait" href="http://sethrait.com/feed.xml">
+
+  <script type="application/ld+json">
+  
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://sethrait.com/Deep-Recursive-AutoAssociative-Memory",
+  "headline": "DRAAM Deep Auto-Associative Memory",
+  "datePublished": "2018-04-27T00:00:00-04:00",
+  "dateModified": "2018-04-27T00:00:00-04:00",
+  "description": "Abstract",
+  "author": {
+    "@type": "Person",
+    "name": "Seth Rait"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Seth Rait",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://sethrait.com",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://sethrait.com",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+
+  <style amp-custom>
+  
+  /* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+  src: url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+  src: url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+  src: url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "et-book-roman-old-style";
+  src: url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+  src: url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Tufte CSS styles */
+html {
+  font-size: 15px; }
+
+body {
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-color: #FFF1E6;
+  color: #632636;
+  max-width: 1400px;
+  counter-reset: sidenote-counter; }
+
+h1 {
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  line-height: 1; }
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  font-size: 2.2rem;
+  line-height: 1; }
+
+.post_title h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  line-height: 1; }
+
+p.subtitle {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1; }
+
+.numeral {
+  font-family: et-book-roman-old-style; }
+
+.danger {
+  color: red; }
+
+article {
+  position: relative;
+  padding: 5rem 0rem;
+  line-height: 50%; }
+
+hr {
+  display: none; }
+
+/*section { padding-top: 1rem;
+          padding-bottom: 1rem; }
+*/
+p, ol, ul, .pagination a, .pagination em {
+  font-size: 1.4rem; }
+
+p {
+  line-height: 2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline; }
+
+/* Chapter Epigraphs */
+div.epigraph {
+  margin: 5em 0; }
+
+div.epigraph > blockquote {
+  margin-top: 3em;
+  margin-bottom: 3em; }
+
+div.epigraph > blockquote, div.epigraph > blockquote > p {
+  font-style: italic; }
+
+div.epigraph > blockquote > footer {
+  font-style: normal; }
+
+div.epigraph > blockquote > footer > cite {
+  font-style: italic; }
+
+/* end chapter epigraphs styles */
+blockquote {
+  font-size: 1.4rem; }
+
+blockquote p {
+  width: 50%; }
+
+blockquote .footer {
+  width: 50%;
+  font-size: 1.1rem;
+  text-align: right; }
+
+ol, ul {
+  width: 85%;
+  -webkit-padding-start: 5%;
+  -webkit-padding-end: 5%; }
+
+/*li { padding: 0.5rem 0; }*/
+figure {
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  max-width: 55%;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  margin: 0 0 3em 0; }
+
+figcaption {
+  float: right;
+  clear: right;
+  margin-right: -48%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  vertical-align: baseline;
+  position: relative;
+  max-width: 40%; }
+
+figure.fullwidth figcaption {
+  margin-right: 24%; }
+
+/* Links: replicate underline that clears descenders */
+a:link, a:visited {
+  color: inherit; }
+
+a:link {
+  text-decoration: none;
+  background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);
+  background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);
+  -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 93%, 100% 93%, 0% 93%; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  a:link {
+    background-position-y: 87%, 87%, 87%; } }
+a:link::selection {
+  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+  background: #b4d5fe; }
+
+a:link::-moz-selection {
+  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+  background: #b4d5fe; }
+
+/* Sidenotes, margin notes, figures, captions */
+img {
+  max-width: 100%; }
+
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative; }
+
+.table-caption {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.0rem;
+  line-height: 1.6; }
+
+.sidenote-number {
+  counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-family: et-book-roman-old-style;
+  position: relative;
+  vertical-align: baseline; }
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem; }
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  top: -0.5rem; }
+
+p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper {
+  width: 55%; }
+
+div.fullwidth, table.fullwidth {
+  width: 100%; }
+
+div.table-wrapper {
+  overflow-x: auto;
+  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+
+@media screen and (max-width: 760px) {
+  p, h1, h2, h3, footer {
+    width: 90%; }
+
+  pre.code {
+    width: 87.5%; }
+
+  ul {
+    width: 85%; }
+
+  figure {
+    max-width: 90%; }
+
+  figcaption, figure.fullwidth figcaption {
+    margin-right: 0%;
+    max-width: none; }
+
+  blockquote p, blockquote .footer {
+    width: 90%; } }
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  letter-spacing: .03em; }
+
+.code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.125rem;
+  line-height: 1.6; }
+
+h1 .code, h2 .code, h3 .code {
+  font-size: 0.80em; }
+
+.marginnote .code, .sidenote .code {
+  font-size: 1rem; }
+
+pre.code {
+  width: 52.5%;
+  padding-left: 2.5%;
+  overflow-x: auto; }
+
+.fullwidth {
+  max-width: 90%;
+  clear: both; }
+
+span.newthought {
+  font-variant: small-caps;
+  font-size: 1.2em; }
+
+.margin-toggle {
+  display: none; }
+
+.sidenote-number {
+  display: inline; }
+
+.margin-toggle:not(.sidenote-number) {
+  display: none; }
+
+@media (max-width: 760px) {
+  .margin-toggle:not(.sidenote-number) {
+    display: none; }
+
+  .sidenote, .marginnote {
+    display: none; }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative; }
+
+  label {
+    cursor: pointer; }
+
+  pre.code {
+    width: 90%;
+    padding: 0; }
+
+  .table-caption {
+    display: block;
+    float: right;
+    clear: both;
+    width: 98%;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    vertical-align: baseline;
+    position: relative; }
+
+  div.table-wrapper, table, table.booktabs {
+    width: 85%; }
+
+  div.table-wrapper {
+    border-right: 1px solid #efefef; }
+
+  img {
+    width: 100%; } }
+/**
+ * Syntax highlighting styles
+ */
+.highlight .c {
+  color: #998;
+  font-style: italic; }
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2; }
+.highlight .k {
+  font-weight: bold; }
+.highlight .o {
+  font-weight: bold; }
+.highlight .cm {
+  color: #998;
+  font-style: italic; }
+.highlight .cp {
+  color: #999;
+  font-weight: bold; }
+.highlight .c1 {
+  color: #998;
+  font-style: italic; }
+.highlight .cs {
+  color: #999;
+  font-weight: bold;
+  font-style: italic; }
+.highlight .gd {
+  color: #000;
+  background-color: #fdd; }
+.highlight .gd .x {
+  color: #000;
+  background-color: #faa; }
+.highlight .ge {
+  font-style: italic; }
+.highlight .gr {
+  color: #a00; }
+.highlight .gh {
+  color: #999; }
+.highlight .gi {
+  color: #000;
+  background-color: #dfd; }
+.highlight .gi .x {
+  color: #000;
+  background-color: #afa; }
+.highlight .go {
+  color: #888; }
+.highlight .gp {
+  color: #555; }
+.highlight .gs {
+  font-weight: bold; }
+.highlight .gu {
+  color: #aaa; }
+.highlight .gt {
+  color: #a00; }
+.highlight .kc {
+  font-weight: bold; }
+.highlight .kd {
+  font-weight: bold; }
+.highlight .kp {
+  font-weight: bold; }
+.highlight .kr {
+  font-weight: bold; }
+.highlight .kt {
+  color: #458;
+  font-weight: bold; }
+.highlight .m {
+  color: #099; }
+.highlight .s {
+  color: #d14; }
+.highlight .na {
+  color: #008080; }
+.highlight .nb {
+  color: #0086B3; }
+.highlight .nc {
+  color: #458;
+  font-weight: bold; }
+.highlight .no {
+  color: #008080; }
+.highlight .ni {
+  color: #800080; }
+.highlight .ne {
+  color: #900;
+  font-weight: bold; }
+.highlight .nf {
+  color: #900;
+  font-weight: bold; }
+.highlight .nn {
+  color: #555; }
+.highlight .nt {
+  color: #000080; }
+.highlight .nv {
+  color: #008080; }
+.highlight .ow {
+  font-weight: bold; }
+.highlight .w {
+  color: #bbb; }
+.highlight .mf {
+  color: #099; }
+.highlight .mh {
+  color: #099; }
+.highlight .mi {
+  color: #099; }
+.highlight .mo {
+  color: #099; }
+.highlight .sb {
+  color: #d14; }
+.highlight .sc {
+  color: #d14; }
+.highlight .sd {
+  color: #d14; }
+.highlight .s2 {
+  color: #d14; }
+.highlight .se {
+  color: #d14; }
+.highlight .sh {
+  color: #d14; }
+.highlight .si {
+  color: #d14; }
+.highlight .sx {
+  color: #d14; }
+.highlight .sr {
+  color: #009926; }
+.highlight .s1 {
+  color: #d14; }
+.highlight .ss {
+  color: #990073; }
+.highlight .bp {
+  color: #999; }
+.highlight .vc {
+  color: #008080; }
+.highlight .vg {
+  color: #008080; }
+.highlight .vi {
+  color: #008080; }
+.highlight .il {
+  color: #099; }
+
+main {
+  margin-top: 20px; }
+
+.page-link {
+  font-size: 1.5em; }
+
+amp-img {
+  background-color: grey; }
+
+article {
+  padding: 0.3rem 0; }
+
+time {
+  font-size: 1.3rem; }
+
+.articles {
+  padding-top: 10rem; }
+
+header {
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 10em;
+  position: fixed;
+  width: 40%;
+  display: inline-block;
+  float: right;
+  margin-left: 40%;
+  z-index: 100000; }
+
+.name-link {
+  text-decoration: none !important; }
+
+@media screen and (max-width: 80em) {
+  header {
+    text-align: left;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-left: inherit;
+    z-index: 10000; } }
+.post-meta {
+  font-size: 1.3rem;
+  line-height: normal; }
+
+.tag {
+  font-size: 0.8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: 2px solid #fbe6d6;
+  border-radius: 5px;
+  background-color: #fbe6d6;
+  text-decoration-line: none;
+  padding: 2px 2px 2px 4px; }
+
+pre {
+  width: 52.5%;
+  padding-left: 2.5%;
+  overflow-x: auto; }
+
+@media (max-width: 760px) {
+  pre {
+    width: 90%;
+    padding: 0; } }
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.125rem;
+  line-height: 1.6; }
+
+  </style>
+
+
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>DRAAM Deep Auto-Associative Memory - Seth Rait</title>
+<meta property="og:title" content="DRAAM Deep Auto-Associative Memory" />
+<meta name="description" content="Abstract" />
+<meta property="og:description" content="Abstract" />
+<link rel="canonical" href="http://sethrait.com/Deep-Recursive-AutoAssociative-Memory" />
+<meta property="og:url" content="http://sethrait.com/Deep-Recursive-AutoAssociative-Memory" />
+<meta property="og:site_name" content="Seth Rait" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-27T00:00:00-04:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "DRAAM Deep Auto-Associative Memory",
+    "datePublished": "2018-04-27T00:00:00-04:00",
+    "description": "Abstract",
+    "url": "http://sethrait.com/Deep-Recursive-AutoAssociative-Memory"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+</head>
+
+  <body>
+	      <header>
+  <div class="page-links">
+    <a class="page-link" href="/">Home</a>
+    
+      
+      • <a class="page-link" href="/about/">About</a>
+      
+	  
+      
+	  
+      
+      • <a class="page-link" href="/contact/">Contact</a>
+      
+	  
+      
+      • <a class="page-link" href="/friends/">Friends</a>
+      
+	  
+      
+	  
+      
+	  
+      
+	  
+	   • <a class="page-link" href="https://sethrait.com/resume.pdf"> Resume </a>
+	   • <a class="page-link" href="https://sethrait.com/tag.html"> Tags </a>
+  </div>
+  <section>
+	  <h1><a class="name-link" href="http://sethrait.com">Seth Rait</a></h1>
+      <h3>Student, Coder, Sailor, Musician
+</h3>
+  </section>
+  </header>
+
+
+    <article>
+
+  <h2 itemprop="name"><a href="" itemprop="url">DRAAM Deep Auto-Associative Memory</a></h2>
+
+  <div class="post-meta">
+    <time datetime="27 April 2018">27 April 2018</time>
+  </div>
+
+  <section>
+    <h1 id="abstract">Abstract</h1>
+
+<p>DRAAM is a recursive encoder-decoder network for transforming
+variable-length hierarchical symbolic data into fixed-width, real-valued
+vectors and vice-versa. It works by first transforming its input, a
+prosaic text corpus into lists of high-dimensional dense vectors, called
+word-embeddings, then feeding those into an encoder network which
+recursively combines vectors as nodes in a binary tree until a final
+encoding, the root of the tree, is reached. The decoder network likewise
+splits the generated encoding until it has reproduced an approximation
+of the input sentence embeddings. This method shows the efficacy of
+recursive neural networks for learning encodings for symbolic
+hierarchical data. While we tested only English language prose, we are
+hopeful that our model can be made to work on more types of symbolic
+data.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>One of the difficulties in applying neural network methodologies to
+inherently symbolic and cognitive tasks such as Natural Language
+Processing, is the ability for a given model to represent its variadic
+input as a fixed-width output. For example, representing
+context-dependent lists of words (sentences) of varying lengths into
+single, real-valued vectors. Common techniques for solving this problem
+include the “sliding window” method, wherein fixed-width <em>windows</em> of
+words are considered consecutively, or else to determine a maximum input
+length and pad all shorter inputs to this length. These methods cannot
+accurately learn representations for variable-length data that are
+context-aware, because the representation only knows of context within
+its current buffer.</p>
+
+<p>Jordan Pollack’s 1989 paper on distributed representations of recursive
+data structures pointed out that the failings of machines to be able to
+represent recursive data structures prevented the application of
+connectionist models to high-level cognitive tasks like Natural Language
+Processing@RAAM. In that paper, he proposed a model called Recursive
+Auto-Associative Memory (RAAM) to solve this very problem, but its reach
+was limited and it could only express a very small sample space due to
+the technical limitations of the time and insurmountable reconstruction
+dilemmas.</p>
+
+<p>Deep learning was then in its nascent stage, but has since progressed
+far enough that revisiting Pollack’s model makes sense. Although
+techniques for connectionist modeling of Natural Language Processing
+(NLP) problems have proliferated, we believe that using a recursive
+tree-based approached as in RAAM, a method that is not commonly
+employed, could provide novel insights. There are now many well-known
+and well-used modes for the representation of symbolic data. In this
+paper, we take a hybrid approach to our representations.</p>
+
+<p>The remainder of this paper is organized as follows. Chapter three will
+give a technical overview of the core infrastructure used in the
+implementation of DRAAM as well as short introduction to neural
+networks. Chapter four will give an overview of RAAM, along with its
+computational and theoretical limitations. Chapter five will describe
+the implementation of DRAAM itself. Chapter six will conclude and
+suggest areas for future work.</p>
+
+<h1 id="technical-background">Technical Background</h1>
+
+<h2 id="neural-networks">Neural Networks</h2>
+
+<p>Artificial neural networks (commonly referred to simply as neural
+networks) are computing systems used to learn specific tasks through the
+observation of examples of similar tasks. More specifically, a neural
+network is a computational system made up of simple interconnected parts
+called <em>neurons</em>, which each apply mathematical functions to their
+inputs and the outputs of prior neurons in a computational graph. They
+do this without any prior knowledge of the task itself, which is what
+differentiates them from traditional computing systems. For example, an
+image recognition neural network may be trained to summarize chalkboard
+video lectures without having to understand the content of the lecture,
+the syntax used on the chalkboard, or the movements of the professor in
+front of the board@Chalkboard. This is done by applying a series
+(possibly billions) of functions to an input (in this case, a video
+lecture) in order to compute the output (slides summarizing the
+lecture).</p>
+
+<p>It is not immediately clear what real-valued functions could be used to
+accomplish such a complicated and nuanced task and generally, that
+knowledge is hidden. We instead let the networks themselves “learn” the
+functions they need. Neural networks can thus be thought of as
+computational “black boxes”. When training them, we observe their
+behavior, but not their internal state. In figure  [fig:simple] below
+is a simple neural network which has two layers and takes two inputs,
+producing one output. It applies functions $a_1$ and $a_2$ to the inputs
+to produce the first layer’s output, which becomes the input to the
+single node in the second layer. The values $w_i$ and $b_i$ are called
+the weights and biases respectively. The goal of a neural network is to
+find the specific weights and biases for each neuron in order to produce
+the desired output from the given input. If one were to inspect these
+many weights and biases, they would be seemingly random numbers that a
+programmer has no hope of picking themselves. We later discuss what
+algorithms can be used to determine these values.</p>
+
+<p><img src="Assets/SimpleNN.pdf" alt="A Simple Neural Network&lt;span
+data-label=&quot;fig:simple&quot;&gt;&lt;/span&gt;" />{height=”2in”}</p>
+
+<p>This network is called a <em>feedforward network</em> because information flows
+in the direction of the arrows and all arrows are pointing in the same
+direction. Thus, the network is a directed acyclic graph which composes
+functions together to produce its output@Goodfellow. Neural networks
+have been developed to accomplish many disparate and computationally
+difficult tasks such as image classification@ImageNet, speech
+recognition@speech, and text translation@Translation. Though these tasks
+are very different, they use the same core techniques of neural networks
+to accomplish their goals.</p>
+
+<h2 id="autoencoders">Autoencoders</h2>
+
+<p>Central to the understanding of both the original RAAM and our new DRAAM
+is the concept of an autoencoder or autoassociator network, which is a
+specific class of neural network. The goal of an autoencoder is to learn
+<em>representations</em> (also called <em>encodings</em>) of their inputs, usually for
+the purpose of dimensionality reduction@demensionalityAutoencoder. That
+is, the goal of taking some number inputs and learning to represent
+those inputs in a smaller space. Other types of autoencoders, such as
+denoising autoencoders, are used for cleaning up data and reconstructing
+data from a corrupted version@denoising. At its simplest form, an
+autoencoder is a fully-connected 3-layer, feed-forward neural network.
+Necessarily, the outer two layers (the input and output layers
+respectively) are the same size as each other, and the central layer is
+a lower dimension than the other two layers. The output of the central
+layer is called the encoding. Autoencoders thus have an “hourglass”
+shape. The transformation which takes place at each layer can be
+represented as a system of pseudo-linear equations as shown below.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+            x_1\\
+            x_2\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+        = \sigma \left (
+        \begin{bmatrix}
+            w_{1,1} & w_{1,2} & \hdots & w_{1,m} \\
+            w_{2,1} & w_{2,2} & \hdots & w_{2,m} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            w_{n,1} & w_{n,2} & \hdots & w_{n,m}\\
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_1\\
+            a_2\\
+            \vdots\\
+            a_n\\
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            b_1\\
+            b_2\\
+            \vdots\\
+            b_n
+        \end{bmatrix}
+        \right ) %]]></script>
+
+<p>In figure  [fig:linear] above, each output $x_i$ is calculated by
+multiplying each input $a_i$ by a vector of weights $w_i$ and adding a
+bias $b_i$. After that, some nonlinear activation function is applied.
+In this case, it is the sigmoid function,
+$\sigma(x)=\frac{1}{1+e^{-x}}$, though other common options include the
+rectified linear unit (ReLU) and hyperbolic tangent (tanh). The process
+of obtaining an output from inputs to the network amounts to a forward
+propagation of those inputs through each layer, where this
+transformation takes place on each individual $x_i$. Note that this is
+the calculation that occurs at every layer of the network, and the
+dimensionality of $\vec{X}$ can be several thousands or larger.</p>
+
+<p>The overall process of the feedforward stage of a neural network can be
+summarized as a composition of semi-linear functions applied to a given
+input. This is true of all neural networks. For autoencoders in
+particular, there is the added constraint that if the function
+composition of the input layer to some non-output layer is called $E$,
+and the composition of $E$ through the output layer is called $D$, then
+when with input $x$, $D(E(a)) = x$. In the simple three-layer
+autoencoder shown below, $E(a)$ is produced by applying these
+transformations once again to the input, and $D(E(a))$ is produced by
+applying these transformations once to $E(a)$ using potentially
+different weights and biases.</p>
+
+<p><img src="Assets/4-2-4Autoencoder.pdf" alt="4-2-4 Autoencoder&lt;span
+data-label=&quot;fig:autoencoder&quot;&gt;&lt;/span&gt;" />{height=”3.75in”}</p>
+
+<h2 id="backprop-and-gradient-descent">Backprop and Gradient Descent</h2>
+
+<p>In order for the weights and biases at each layer to produce the desired
+encoding and decoding to meet the requirement: $D(E(a)) = a$, we need to
+have the correct values for all the weights and biases (the parameters).
+There are two pieces of information we need to know in order to arrive
+at the correct parameters for our model. We need to know:</p>
+
+<ol>
+  <li>
+    <p>How “bad” our original parameters are</p>
+  </li>
+  <li>
+    <p>How to change them so that they get better over time.</p>
+  </li>
+</ol>
+
+<p>Solving (1) is fairly straightforward. We can compare the outputs of our
+model $\vec{A’}$ to their respective inputs $\vec{A}$ and see how far
+from each other they are. Since there are multiple inputs and multiple
+outputs to compare, we do not really care about how each individual
+input and output performs, just how the model performs on average. Also
+irrelevant is the sign of the difference between individual $a_i$ and
+$a_i’$, since the magnitude of the difference is all that is needed in
+order to know how bad the results are. We want to penalize larger
+differences more than smaller ones, since larger differences represent
+worse results, so we square the values both to normalize them (remove
+their sign) and give greater precedence to larger errors. We
+substantially calculate our loss function using the Mean Squared Error
+of the inputs with respect to the outputs. The loss for input vector
+$\vec{A}=[a_1 … a_n]$ with output vector $\vec{A’}=[a_1’ … a_n’]$ is
+given as:</p>
+
+<script type="math/tex; mode=display">\ell = \frac{1}{n} \sum_{i=1}^{n}(a_i - a_i')^2</script>
+
+<p>Solving (2) is a little more difficult. Now that we know how close we
+are to our goal, we need a way of getting closer to it. To do this, we
+use a technique called backwards propagation of errors by gradient
+descent, wherein we apply the chain rule for computing partial first
+derivatives to the cost function (in terms of weights and biases) in
+order to find the gradient. The <em>gradient</em> of a function of several
+variables $f(x_1, x_2, … x_n)$ denoted as $\nabla f$ is a vector
+giving the direction and magnitude of steepest increase of a function,
+and is computed as
+$\nabla f(x_1, x_2 … x_n) = (\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, … \frac{\partial f}{\partial x_n}$)
+. So, it is a necessary condition that the function $f$ have a
+derivative. Since $f$ must have a derivative, so must the activation
+function being used. Next, we take the negative of the gradient (hence
+the name, gradient <em>descent</em>) to move towards the minimum of the
+function. This is exactly what it means for a neural network to <em>learn</em>.
+To learn is just to figure out which weights and biases to use in order
+to minimize our loss.</p>
+
+<p>This process is similar to rolling a ball down a hill to find valleys.
+The distance the ball rolls on each iteration of training is called the
+<em>learning rate</em>. We repeat this step many times, given by an <em>epoch</em>
+(the number of times we input the data into the network while training
+it) until we are very close to a minimum. Each of the learning rate and
+epoch are called the hyper-parameters of a network and choosing the
+right values for them is done experimentally for each network.
+Generally, smaller learning rates pair with more epochs, and smaller
+learning rates are usually more appropriate as they help to find minima
+without “rolling too far”.</p>
+
+<p>To summarize, we minimize the mean squared error between the inputs and
+the outputs by propagating backwards through the network. During this
+propagation, we take partial derivatives to find gradient vectors, which
+help us to locate minima of the function by taking small steps in the
+direction opposite the gradient. We repeat this process <em>epoch</em> times,
+each time coming closer and closer to a minimum value for the loss
+function, thus making our network continually better at reconstructing
+its input. When updating the weights and biases through back propagation
+and gradient descent ceases to decrease the error, we know we have
+arrived at a minimum of the function<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+
+<h2 id="word-embeddings">Word Embeddings</h2>
+
+<p>DRAAM relies heavily on the use of word embeddings, which are
+real-valued vector representations of subwords, words, and phrases. Word
+embeddings were invented as a means for performing computations on
+natural language data. Computers are woefully inept at handling symbolic
+data, so a way to represent words as real-valued vectors is needed.</p>
+
+<p>A common model for constructing these vectors is Word2vec@Word2vec.
+Word2vec uses a shallow two-layer neural network to produce embeddings
+of several hundred dimensions from large vocabularies. Word2vec can be
+trained in two different modes of operation. In skip-gram mode, the
+model uses the current word to predict a surrounding context. It weighs
+closer words heavier than more distant words. In the second mode, called
+continuous bag of words (CBOW), the current word is predicted from a
+context window surrounding that word, with the order of the words in the
+window being irrelevant. CBOW mode is faster at computing embeddings,
+but skip-gram is better for rare words.</p>
+
+<p>Word2vec is also trained using two different methods. The hierarchical
+softmax algorithm which uses a Huffman tree<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> to approximate the
+conditional log-likelihood of a context is used to train infrequent
+words. For words which are more common, negative sampling is used.
+Negative sampling minimizes log-likelihood of negative instances.</p>
+
+<p>The biggest benefit of models like Word2vec is that words which have
+semantically similar meanings produce similar embeddings. Because of
+this fact, one can perform semantically meaningful, arithmetic
+operations on the embeddings. For example, the operation: vec(“King”) -
+vec(“Man”) + vec(“Woman”) yields a vector very close to
+vec(“Queen”)@Word2vec.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> This makes word embeddings generated by these
+models highly adaptable to other tasks such as further processing by
+neural networks.</p>
+
+<h1 id="previous-work">Previous Work</h1>
+
+<h2 id="raam">RAAM</h2>
+
+<p>Pollack’s Recursive Auto-Associative Memory, or RAAM@RAAM , is a system
+used to recursively encode symbolic variable length tree structures into
+fixed-width real-valued vectors. RAAM networks are nearly identical to
+the 2k - k - 2k three-layer autoencoders described in the previous
+chapter, except the outputs from the center layer (the encoder) are
+applied to the first layer as inputs, therefore making the network
+recursive.</p>
+
+<p>In RAAM, an input of $n$ symbols is encoded pairwise wherein the $n$
+inputs are each of the leaves of a binary tree<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>, and the output from
+the middle layer (before being applied recursively) is the vertex
+representing the parent node of the two inputs. This output is then fed
+back into the RAAM with another output from two more of the original
+inputs. The process continues until the root of the tree is discovered,
+at which point we have obtained the final encoding of the input. For an
+input of $n$ symbols, there are $n/2$ first-step encodings, all of which
+are fed back in as inputs. Thus, the inputs are actually a moving target
+with an initial size of n, but which generate $2n-1$ pairwise encodings.
+The decoder recursively decodes and splits until (hopefully) the
+original input is generated again.</p>
+
+<p>Since intermediate encodings are fed back into the network as inputs,
+hence creating a “moving target” for the inputs, RAAM is very sensitive
+to its hyper parameters. The learning rate (for gradient descent) and
+momentum (for integrating previous steps) need to be set low enough in
+order not to change representations so much as to invalidate the
+decreasing error, but set high enough that learning occurs. If they are
+set too high, intermediate representations will change so drastically,
+that the previous measure of error is a poor measure for how well the
+model is doing, since the input has changed so much. If the
+hyper-parameters are too low, the model will take too long to converge.</p>
+
+<p>Below is a sample RAAM encoding for the input $a_1, a_2, a_3, a_4$.
+First $R_1$ is generated by feeding $a_1$ and $a_2$ into the input
+neurons in the network. then $R_2$ is generated likewise from $a_3$ and
+$a_4$. Finally, $R_3$ is generated by feeding in $R_1$ and $R_2$ in the
+same way as the original inputs. After this process finishes, we can
+then decode $R_3$ back into $R_1$ and $R_2$, which in turn can be
+decoded back into approximations of the original input:
+$a_1’, a_2’, a_3’, a_4’$ which we hope are very close to
+$a_1, a_2, a_3, a_4$ respectively.</p>
+
+<p><img src="Assets/RAAM_Encoder.pdf" alt="RAAM Encoder&lt;span
+data-label=&quot;fig:raam&quot;&gt;&lt;/span&gt;" />{width=”\linewidth”}</p>
+
+<p>As shown above in figure  [fig:raam], Encodings are generated on a
+per-pair basis, then added to the input to be re-encoded, which yields
+two interesting facts:</p>
+
+<ol>
+  <li>
+    <p>Representations are developed for all subtrees which can be
+generated from a given input. This is a computationally expensive
+task which has both advantages and drawbacks when compared to the
+possibility of only computing the single “root” encoding. An
+advantage is that pairs of inputs which occur frequently (such as
+the bigram “good morning”) only need to be encoded one time, since
+their encoding will be stored. However, storing all intermediate
+encodings gives rise to very slow training and high memory costs.</p>
+  </li>
+  <li>
+    <p>When the input size is a power of two, it can be represented as a
+complete binary tree. However, when the input size is not a power of
+two, there are several ways one could represent it as a binary tree,
+as shown in figure  [fig:trees]. One method might be to encode the
+input as a left-branching tree (B), wherein for odd inputs (which
+are generated from even inputs that are not a power of two), the
+last symbol in the original input is left as the last symbol in the
+next round of encoding, and is only ever encoded with the
+penultimate representation. A better solution, however, is to
+recycle the last symbol in an odd-length input as the first symbol
+in the next round, to preserve the tree’s shape (A).</p>
+  </li>
+</ol>
+
+<p>[a]<span>1</span></p>
+
+<p>for tree=<span>parent anchor=south, child anchor=north</span>, where n
+children=0<span>tier=word</span> [$R_9$ [$R_6$ [$R_1$ [$a_1$]
+[$a_2$] ] [$R_2$ [$a_3$] [$a_4$] ] ] [$R_8$ [$R_7$ [$R_3$
+[$a_5$] [$a_6$] ] [$R_4$ [$a_7$] [$a_8$] ] ] [$R_5$
+[$a_9$] [$a_{10}$] ] ] ]</p>
+
+<p>[b]<span>1</span></p>
+
+<p>for tree=<span>parent anchor=south, child anchor=north</span>, where n
+children=0<span>tier=word</span> [$R_9$ [$R_8$ [$R_6$ [$R_1$
+[$a_1$] [$a_2$] ] [$R_2$ [$a_3$] [$a_4$] ] ] [$R_7$ [$R_3$
+[$a_5$] [$a_6$] ] [$R_4$ [$a_7$] [$a_8$] ] ] ] [$R_5$
+[$a_9$] [$a_{10}$] ] ]</p>
+
+<p>The RAAM decoder works in the same fashion as the encoder, though needs
+to overcome one additional complexity. When encoding, it is very easy to
+decide upon a termination condition, that is, it is easy to tell the
+encoder when to stop encoding. This happens when the input has been
+condensed into one item. However, it is not immediately clear how to
+know how many times to decode and “split” an encoding to produce its
+original input. Given some encoding $R_x$, how do we determine how many
+times to pass $R_x$ and its decodings through the decoder? Pollack
+solves this dilemma using a “terminal test” which transforms the output
+from binary to analog.</p>
+
+<p>Before explaining the terminal test, it is important to understand the
+structure of the inputs to RAAM. Pollack uses an n-hot similarity-based
+classifying scheme for his inputs. In this scheme, where inputs to the
+RAAM are sentences, words in the sentences are divided into five
+classes, THING, HUMAN, PREPOSITION, ADJECTIVE, and VERB, and each word
+in the group is represented as a unique (to that group) bit-string
+vector. Sentences are then the concatenation of the bit-strings which
+make up their constituent words, with empty vectors representing
+sentences without one of the five classes.</p>
+
+<p>After encoding a sentence, we are left with one real-valued vector
+representing it. To recover the original sentence, we apply the vector
+to the decoder recursively, each time checking whether all values in the
+resulting vectors are within some threshold $\tau$ (which Pollack sets
+to $\tau=0.2$) for terminals and $v=0.05$ for non-terminals. Double
+thresholding is needed because, while $\tau=0.2$ is a fine threshold for
+converting real-valued vectors to analog identifiers, it is much too
+permissive to be able to successfully reconstruct terminals from their
+their non-terminal representations. That is, to reconstruct terminals a
+and b from their representation $R_1$, when obtaining $R_1’$ from $R_2$,
+$R_1’$ must be very close to $R_1$.</p>
+
+<h2 id="limitations-and-capacity">Limitations and Capacity</h2>
+
+<p>The original RAAM had some notable drawbacks which have prevented it
+from being able to effectively scale to industry-sized data sets
+commonly used in NLP. Most of these issues pertained to the terminal
+test. This resulted in four main issues, three of which are discussed by
+@IRAAM. First, if representations never “pass” the terminal test, the
+deconstructor gets caught in an infinite loop. This could be potentially
+easy to fix by “breaking” the test after a certain number of
+deconstructions (assuming one has an upper bound of how big inputs are)
+and then doing a nearest neighbor search to find the most likely input
+that generated the vector.</p>
+
+<p>The second problem is the converse of the first, wherein a non-terminal
+passes the terminal test. Third, there is a tradeoff between precision
+and capacity in RAAM. Smaller tolerances (such as $\tau=0.1$ and
+$v=0.02$) will slow down convergence during the training stage, but
+larger tolerances will allow fewer representations, thus decreasing
+capacity. Lastly, using bit-patterns, the Hamming distance <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> between
+some terminals in the same class is equal to 1, so similar terminals
+could be decoded interchangeably as each other. For example, the
+preposition “John loves Mary”, could easily be decoded as “Frank loves
+Mary”. This still leaves the grammatical structure of the input intact,
+which is desirable, but does change the overall meaning of the
+preposition.</p>
+
+<h2 id="iraam">IRAAM</h2>
+
+<p>The limited practical capacity of RAAM is problematic, but inspection of
+its theoretical representational capacity yields some insights into how
+a RAAM-type system with a higher capacity could be constructed. As
+mentioned above, using a terminal test is problematic and is the cause
+of many of RAAM’s representational woes. Levy@IRAAM presents a different
+way of describing RAAMs which leads to a more dynamic way of identifying
+terminals, thus elucidating the theoretical capacity of RAAMs and
+increasing their practical performance. Recall equation  [fig:linear]
+where we represent a layer of an autoencoder as a system of semi-linear
+equations. Levy presents a similar view of a complete RAAM decoder as
+follows (vector size of 4):</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+t_k
+        \begin{bmatrix}
+            x_1\\
+            x_2\\
+            x_3\\
+            x_4\\
+        \end{bmatrix}
+        = \sigma \left (
+        \begin{bmatrix}
+            w_{k,1,1} & w_{k,1,2} & w_{k,1,3} & w_{k,1,4} \\
+            w_{k,2,1} & w_{k,2,2} & w_{k,2,3} & w_{k,2,4} \\
+            w_{k,3,1} & w_{k,3,2} & w_{k,3,3} & w_{k,3,4} \\
+            w_{k,4,1} & w_{k,4,2} & w_{k,3,4} & w_{k,4,4}\\
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_1\\
+            a_2\\
+            a_3\\
+            a_4\\
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            b_{k,1}\\
+            b_{k,2}\\
+            b_{k,3}\\
+            b_{k,4}
+        \end{bmatrix}
+        \right ) %]]></script>
+
+<p>Each $t_k \in T$ is in the set of transforms which decode each of the
+left and right subtrees<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>, and the matrix W and vector b are the
+standard weights and biases as in figure  [fig:linear]. Levy points
+out that this way of presenting a RAAM decoder is very similar to an
+Iterated Function System (IFS). IFSs are a method for constructing
+fractals by applying outputs of a set of linear transforms as the inputs
+to that same set of transforms, much in the same way that RAAM applies
+the output of its encoder into the input again to achieve its recursive
+representations.</p>
+
+<p>In an IFS, as the number of iterative applications approaches infinity,
+the limit is called the attractor of the IFS. The attractor is the fixed
+point of the transforms. If all transformations $t_k \in T$ are
+contractive, that is, the distance between two points decreases after
+application of the transform, then the IFS has an attractor and that
+attractor is a fractal. Fractals are notable in that, as the name
+implies, they are fractional dimensional <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> and, more importantly to
+RAAM, their enclosed surface area is infinite.<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+
+<p>As Levy points out, because of the use of the non-linear sigmoid
+function, RAAM cannot technically be an IFS, but the properties of the
+sigmoid activation function are still useful in this viewpoint, as that
+function is pseudo-contractive, since the range of $\sigma$ is (0, 1).
+Though it will not always bring points closer on successive iterations,
+it will shrink successive areas of the images of the unit square.</p>
+
+<p>This realization allows for a new kind of terminal test for RAAM
+decoders: <em>is the point on the attractor?</em> If so, the point is a
+terminal, if not, we continue decoding until we reach a point on the
+attractor. Helpfully, this new terminal test has none of the issues of
+the previous one, with some added benefits. The theoretical
+representational capacity of a RAAM implementing this terminal test is
+infinite (so we call it IRAAM, or Infinite RAAM), since every point on
+the attractor is a terminal, and the surface area enclosed by the
+fractal is infinite. This also gives us a way of generating terminals
+from random encodings. One must only pick a random point not on the
+attractor and decode it until landing on the attractor to find its
+terminals. This then yields a way to find the space of all possible
+representations of a given IRAAM: just apply the decoder to every point
+not already on the attractor.</p>
+
+<p>Practically, the matter is somewhat messier. As stated by
+Barnsley@FractalsEverywhere, each point on an attractor can be
+associated with an address which is the sequence of the indices of the
+transforms used to arrive at that point from some other points, which is
+how we obtain IRAAM’s infinite capacity. However, an infinitely long
+address is of little use to someone creating an IRAAM on a physical
+computer, so we must limit IRAAMs to a certain <em>resolution</em>. That is, we
+cannot rely on the fact that in the limit, an IRAAM has infinite
+capacity, as we need to halt our computations at some point. Therefore,
+there is a direct relationship between the resolution of the IRAAM and
+its representational capacity.</p>
+
+<h1 id="draam">DRAAM</h1>
+
+<p>We designed several new models based off of RAAM. First, we implement a
+RAAM using one-hot vectors to encode English sentences. Next, we
+phased-out the one-hot vectors in favor of word embeddings, as described
+in section 3.4. Lastly, we create a RAAM using a deep recursive neural
+network, which we call Deep RAAM, or DRAAM.</p>
+
+<p>These models were all trained using an optimizer based on a variant of
+gradient descent called Adam@adam. Adam is similar to stochastic
+gradient descent(SGD), but combines methods from other algorithms as
+well. From the Adaptive Gradient Algorithm (AdaGrad), it adopts a
+per-parameter/weight learning rate (as opposed to the single learning
+rate $\alpha$ used by SGD) which improves performance on problems which
+have sparse gradients@adagrad. From the Root Mean Square Propagation
+Algorithm (RMSProp), it borrows the idea of adaptive learning rates.
+That is, the parameter learning rates are updated based on the mean of
+the magnitudes of the gradients for the weights, or how quickly the
+weights are changing. This is particularly well suited for our problem
+because of the moving target inputs.</p>
+
+<h2 id="one-hot-limited-gradient-flow">One-hot Limited Gradient Flow</h2>
+
+<p>Our first experiment was a recursive one-hot autoencoder, similar to
+that in @RAAM for encoding prepositions with a branching factor of 3,
+but somewhat simplified. Pollack’s approach in this section was to
+transform each terminal - a grammatical preposition - into a
+similarity-based 16-bit binary representation by division of the words
+into the semantic classes THING, HUMAN, PREP, ADJ, and VERB. Each word
+in each group was then given a bit pattern and patterns were
+concatenated, inserting groups of ‘0’ for empty spots. These 16-bit
+patterns were then encoded and decoded as described in section 4.1.</p>
+
+<p>Our model encodes letters as one-hot vectors in the following way. For a
+language with $k$ arbitrarily-ordered symbols, symbol number $n$ is a
+vector whose $n$th element is $1$, and all other elements are $0$.
+“Sentences” are then generated from the vectors by creating lists of
+these vectors. Thus, a sentence is a list of $m$ vectors of size $k$,
+where $m$ is the number of words in the sentence and $k$ is the
+dimensionality of each vector (ie. the number of symbols in the
+language). Within each list, symbols are encoded as pairwise
+concatenations of their vectors as in a 2k-k-2k RAAM, with the outputs
+of the center layer being fed back into the input layer until all
+symbols in a sentence are consumed. The encodings take place in “rounds”
+starting with the terminal symbols as the roots of a binary tree. Once
+all inputs of a round are consumed, they are fed back into the input
+layer and the next round begins. For sentences of odd length, this
+results in a left-branching binary tree, wherein the penultimate
+encoding is concatenated with the last input symbol from the original
+input to produce the final encoding.</p>
+
+<p><img src="Assets/LGF_RAAM.pdf" alt="Limited Gradient Flow RAAM Encoder&lt;span
+data-label=&quot;fig:lgf&quot;&gt;&lt;/span&gt;" />{height=”2.5in”}</p>
+
+<p>This RAAM uses a rectified linear unit activation for each neuron. A
+rectified linear unit (ReLU) is the function
+$f(x) = max(0, x)\footnote{In section 3.3, we said the activation function needs to be differentiable in order for gradient descent to work.  ReLU, however, is not differentiable at $x=0$, so to solve this we use a subderivative.  When $x=0$ we manually set the derivative to 0.  So $f(x)|_<span>x=0</span>=0$}$.
+As such, the output is $0$ when the input is negative, and the output is
+equal to the input otherwise. Our loss is the mean squared error as
+before, and uses a limited gradient flow, ie. the loss is calculated on
+a per-layer basis. For example, for a sentence with terminals
+$a, b, c, d$ an encoder function $E$ and decoder function $D$. The loss
+is calculated as $MSE((a|b), D(E(a|b)))$ where $E$ is not applied
+recursively. So, if $E(a|b)=R_1$, and $D(R_1)=(a’|b’)$, we calculate the
+loss at this level before continuing the recursive encoding. Because of
+this fact, we call this model a limited gradient flow network. We later
+explore an alternate method for calculating loss.</p>
+
+<p>This model was able to successfully encode and decode its training set,
+but did not generalize well to novel data. This was expected, as one-hot
+vectors are information-sparse and contain no information about the
+underlying data, so there is little information and no patterns for
+models to “learn”.</p>
+
+<h2 id="dense-limited-gradient-flow">Dense Limited Gradient Flow</h2>
+
+<p>The next system we implemented was nearly identical to the first, but
+instead of using one-hot vectors to represent symbols in the language,
+we used 300-dimensional real-valued dense vectors obtained from the
+fasttext network@FastText. Fasttext is a model used to generate word
+embeddings similar to Word2vec. Embeddings created by fasttext contain
+subword information by training on character n-grams. This is a
+desirable property for embeddings to have, as it increases the
+similarity of tenses of the same words, as well as words with similar
+prefixes and suffixes. Our training and testing sets were formed from
+“Pride and Prejudice”, “Emma”, and “Sense and Sensibility”. Sentences
+were parsed from the text and converted into lists of 300 dimensional
+vectors using fasttext. They were then fed into a network in a similar
+way to the previous experiment, but with a few key differences.</p>
+
+<p>This network was deeper, with an input layer of 600 neurons (2x300), a
+first hidden layer of 450 units, and a central layer, representing the
+encoded sentences, as 300 units. The decoder was symmetric to the
+encoder. Instead of using a sigmoidal activation, a hyperbolic tangent
+($tanh(x)=\frac{e^{2x}-1}{e^{2x}+1}$) was used, as it matched the range
+of the input vectors: $(-1, 1)$. For our learning rate, we used the
+value $1 \cdot 10^{-5}$, which was chosen experimentally. This model
+showed a greater ability to generalize, as it was able to produce
+similar losses after training for sentences in the validation set as
+sentences in the training set.</p>
+
+<h2 id="deep-raam">Deep RAAM</h2>
+
+<p>Our last model is similar to the previous one, in that it uses word2vec
+embeddings, but does away with the limited gradient flow in favor of
+end-to-end loss calculation. In this model, the loss for terminals is
+calculated as the $MSE$ of the input terminals and the recursively
+decoded output terminals. Thus, for sentences of length $n$, the depth
+of the network that encodes them is $2 log_2(n) - 1$. We therefor call
+this model Deep Raam And Applied eMbeddings, or DRAAM.</p>
+
+<p>In order to build this network in Tensorflow, which does not natively
+support dynamic networks, which would be requeired to encode sentences
+of varying length, we truncated/padded sentences with $\vec{0}$ to all
+contain the same number of “words”. Further, each word vector was padded
+by some fraction of its overall length $p$ (which we originally set to
+$p=\frac{1}{2})$, resulting in each word vector having a dimension of
+450. We do this in order for the terminals’ representations to have
+“room” to differentiate themselves. Since the vectors produced by
+fasttext are dense, a model which needs to learn compressed
+representations of these vectors will have little chance to do so
+without the added padding.</p>
+
+<p>As an example for how the loss calculation of this model differs from
+the previous one, let the vector encoding of a word $a$ be $vec(a)$, the
+encoding of a vector be $E(vec)$ and the decoding of a vector be
+$D(vec)$. For a sentence “Hello, how are you?”<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>, the loss for
+vec(Hello) relies on the computation of the rest of the tree.</p>
+
+<p><span>.4</span> <img src="Assets/DRAAM.pdf" alt="Calculating loss in a DRAAM&lt;span
+data-label=&quot;fig:draamLoss&quot;&gt;&lt;/span&gt;" title="fig:" />{height=”2.5in”}</p>
+
+<p><span>.55</span></p>
+
+<p>``` {frame=”lrtb” basicstyle=”\small”}
+$R_1 \leftarrow$ E(vec(Hello)|vec(how))
+$R_2 \leftarrow$ E(vec(are)|vec(you))
+$R_3 \leftarrow$ E($R_1$|$R_2$)
+$R_1’$,$R_2’=$split(D($R_3$))
+vec(hello)$’$, vec(how)$’$=split(D($R_1’$))
+loss = MSE(vec(hello)$’$,vec(hello))</p>
+
+<p>```</p>
+
+<p>As shown in figure  [fig:draamLoss] above, calculating loss for inputs
+now requires an end-to-end computation, unlike in previous RAAMs. That
+is, the loss for input $a$ can not be computed until $a’$ is generated,
+which requires first computing representations of $b$, $c$, and $d$. In
+the previous models, one could calculate the loss for $a$ and $a’$ after
+only computing $R_1$. This model is preferable to the limited gradient
+flow models because the intermediate representations become “free
+variables”, giving the network more freedom for learning latent features
+in the data. However, since DRAAM, no longer stores intermediate
+representations ($R_1$ and $R_2$ in figure  [fig:draamLoss]), we
+cannot explicitly store representations of common two-word phrases such
+as “<em>it is</em>”.</p>
+
+<p>This model solves the double terminal test needed in training the
+original RAAM in two ways. First, since intermediate representations are
+ephemeral and sentences are truncated/padded to all be the same size, we
+know how many decodings we need to do. Second, even if we were to
+implement a dynamic network which allows for varying sentence lengths,
+one terminal test would likely suffice, as we would only need to check
+whether the last $p \cdot len(vec)$ digits in the output are very close
+to $0$, denoting a terminal.</p>
+
+<p>Setting the parameters and hyper-parameters of DRAAM was carried out
+experimentally. We chose a learning rate of $5 \cdot 10^{-3}$ and again
+used hyperbolic tangent activation functions at each layer. Loss values
+over time for various learning rates are given in figure  [fig:chart]
+below both for training data and testing data. Interestingly, DRAAM did
+not notice any significant degradation in reconstruction quality (as
+measured by loss and cosine similarity<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>) when shrinking the padding
+parameter $p$. We were able to successfully decrease $p$ from
+$p=\frac{1}{2}$ to $p = \frac{1}{30}$ (resulting in paddings between 150
+and 10 for a vector size of 300) without reducing the representation
+capacity of DRAAM. This suggests that any increase in representational
+capacity afforded to the network given by the padding is counteracted by
+the increased difficulty in reconstructing the $p$ zeros. This was a
+welcome discovery, as it reduces the size of sentence representations by
+a considerable amount.</p>
+
+<p><span>1</span> <img src="Assets/TrainingLoss.jpg" alt="Loss During Training&lt;span
+data-label=&quot;fig:chart&quot;&gt;&lt;/span&gt;" title="fig:" />{height=”3in”}</p>
+
+<p><span>1</span> <img src="Assets/TestingLoss.jpg" alt="Loss During Training&lt;span
+data-label=&quot;fig:chart&quot;&gt;&lt;/span&gt;" title="fig:" />{height=”3in”}</p>
+
+<h1 id="conclusion-and-further-work">Conclusion and Further Work</h1>
+
+<p>In this paper, we presented new approaches to the problem of
+representing variable-width symbolic data in fixed-width
+representations. Our three models gave us new insights into the practice
+of building recursive neural networks and applying them to common NLP
+tasks. The last model. We built off of previous work on recursive
+representations@RAAM [@IRAAM] and word embeddings@FastText [@Word2vec],
+resulting in a scheme which combines models for both to accomplish its
+goal. Our final model, DRAAM, is a recursive autoencoder which uses word
+embeddins to transform variable length sentences into a fixed-width
+numeric vector. It provides a novel update to RAAMs and we believe it
+will benefit from future work, extending its usefulness to a wider array
+of situations.</p>
+
+<p>Any further work on DRAAM should start by implementing a dynamic network
+to allow for sentences of varying length without needing to alter them
+to be the same length. This could be achieved by implementing DRAAM in a
+framework other than Tensorflow that natively supports dynamic networks,
+or otherwise using a library such as Tensorflow Fold in order to
+accomplish the same task within Tensorflow. As mentioned in the previous
+section, were this to be implemented, a terminal test would need to be
+used in order to determine when a representation has been fully decoded
+into terminals. This could merely be a check for when the last
+$p \cdot log_2(n) - 1$ digits are very near 0, or could be a thresholded
+cosine similarity to terminals. Further, one could implement an IDRAAM,
+combining DRAAM’s architecture with that of Levy’s IRAAM@IRAAM, further
+expanding upon DRAAM’s representational capacity.</p>
+
+<p>Lastly, future work would explore different methods of concatenating
+pairs of words in sentences for encoding. In our experiments, we merely
+concatenated adjacent words. Instead, one could concatenate words which
+share the same parent in a parse tree of the sentence the words make up.
+This would further exploit the context-aware nature of the embeddings
+and could help mitigate reconstruction errors, so that if a sentence is
+not reconstructed correctly, it still may be reconstructed with words
+that have a similar meaning and the same part of speech.</p>
+
+<h1 id="acknowledgments">Acknowledgments</h1>
+
+<p>I would like to thank Professor Jordan Pollack for introducing me to
+this interesting topic, and for giving me the opportunity to conduct
+research and learn about subjects I had previously no experience in. I
+would also like to thank Nick Moran and Aaditya Prakash for answering my
+endless questions, pointing me towards interesting problems, providing
+helpful solutions, and elucidating exotic StackOverflow threads.
+Finally, I would like to thank my adviser for the past four years,
+Professor Antonella Di Lillo, without whom I would have surely gone mad,
+and who has given me helpful advice and pushed me to pursue this thesis.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>We say <em>a</em> minimum instead of <em>the</em> minimum, because the function
+may very well have many minima, and standard gradient descent finds
+<em>local</em> minima, note <em>global</em> minima. Finding the global minimum of
+a function is a much more difficult task than finding local minima. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>A Huffman Tree@huffman is a binary tree encoding the relative
+frequency of symbols and is used primarily to construct Huffman
+codes, a common type of prefix code used for lossless compression.
+Here, it is used for conditional log log-likelihood of specific
+letters in the sample. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>@problems suggests some issues with this vector arithmetic and
+questions the accuracy of this claim, which was initially made by
+Mikolov in Word2vec. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Pollack also explores a ternary-RAAM, which is nearly identical to
+this explanation, but has a branching factor of three instead of
+two, ie. a trinary tree. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>The Hamming distance, or edit distance, between two strings $a$
+and $b$ is the number of places where $a$ needs to change in order
+to be equal to $b$. Hamming distance is symmetric, so
+$Hamming(a,b)==Hamming(b,a).$ <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>When Levy presents this in his work, he uses a ternary-RAAM, and
+so T is the set of transforms which decode each of the left, right,
+and center subtrees. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>The dimension of a given fractal is called its <em>Hausdorff
+dimension</em> and can be computed as the ratio of the logarithm of the
+number of transforms to the logrithm of their scaling
+factor.@Fractal <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>More accurately, for all 2-dimensional fractals, the surface area
+is 0, but the surface area <em>enclosed by</em> the fractal depends on the
+shape of the specific fractal in question. For fractals of higher
+dimension, their surface area is infinite. <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>For the purpose of an simple example, we are representing this
+sentence as four distinct symbols, however in our model it would be
+parsed as six symbols. Punctuation marks are each represented in the
+same manner as words. <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>The cosine similarity of two vectors is the magnitude of the
+angle between them (measured by their cosine) and is bounded on the
+interval $[-1,1]$, where 1 represents linearly dependent vectors.
+Thus, if two vectors have a cosine similarity close to 1, they are
+very similar to each other. Thus, if two vectors are <em>the same</em>,
+they will have a cosine similarity of 1. Though, since all linearly
+dependent vectors have a cosine similarity of 1, this metric cannot
+be used alone, thus we also collect information on the MSE loss. <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </section>
+
+
+  </div>
+</article>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82203524-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>DRAAM Deep Auto-Associative Memory - Seth Rait</title>
+<meta property="og:title" content="DRAAM Deep Auto-Associative Memory" />
+<meta name="description" content="Abstract" />
+<meta property="og:description" content="Abstract" />
+<link rel="canonical" href="http://sethrait.com/Deep-Recursive-AutoAssociative-Memory" />
+<meta property="og:url" content="http://sethrait.com/Deep-Recursive-AutoAssociative-Memory" />
+<meta property="og:site_name" content="Seth Rait" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-27T00:00:00-04:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "DRAAM Deep Auto-Associative Memory",
+    "datePublished": "2018-04-27T00:00:00-04:00",
+    "description": "Abstract",
+    "url": "http://sethrait.com/Deep-Recursive-AutoAssociative-Memory"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </body>
+</html>

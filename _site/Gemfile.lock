@@ -4,7 +4,7 @@ GEM
     byebug (8.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    colorator (1.1.0)
+    colorator (0.1)
     ffi (1.9.10)
     ffi (1.9.10-x64-mingw32)
     hitimes (1.2.2)

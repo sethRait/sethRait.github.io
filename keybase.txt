@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/srait
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sethrait.com
+  * I am srait (https://keybase.io/srait) on keybase.
+  * I have a public key ASD4-zSX6bWqLUSPlvJtHCj7NWn8uTYksNeAsvjT27i_2wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200639cb0aebbc2b0b3fad066f71b20487c9a518a3e6ebd9a4c88f461458aa5e9b0a",
+      "host": "keybase.io",
+      "kid": "0120f8fb3497e9b5aa2d448f96f26d1c28fb3569fcb93624b0d780b2f8d3dbb8bfdb0a",
+      "uid": "a95cbc94460d333df7591daf6a334b19",
+      "username": "srait"
+    },
+    "merkle_root": {
+      "ctime": 1525313812,
+      "hash": "9b1a0e10d44412ce6ca949c36a9718f2901b42aa5683de28a9a6eeddb2e6e22017335bef5789026e263f4e3468b7e8be5dd09dfafb099052d353355c435bddb4",
+      "hash_meta": "87b958f2f7dba0b4ff7e6f4133e8a8fd9d0e31d588165cf2a9d4a72392b8c1b7",
+      "seqno": 2473436
+    },
+    "service": {
+      "entropy": "ow9QYKJeveQhuf1GSnBw709+",
+      "hostname": "sethrait.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.47"
+  },
+  "ctime": 1525313832,
+  "expire_in": 504576000,
+  "prev": "cd3f61c708e1ee74f7b3f8330040de690d30aa6e9cd9760f890be0e9ec121c57",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg+Ps0l+m1qi1Ej5bybRwo+zVp/Lk2JLDXgLL409u4v9sKp3BheWxvYWTESpcCD8QgzT9hxwjh7nT3s/gzAEDeaQ0wqm6c2XYPiQvg6ewSHFfEINwfap406F1t0SaeR2WxjInNnWg1msr9Z0gjSu2zZh7SAgHCo3NpZ8RAVMmMYlW15NEFT6nIrCdMNQr30v9COsqbD+EKfzP5jP3QQE/SvLAgS99QgXTA2QjO+CAgSS0JHIj8Sq+Rlc6ADqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMArYutwcgij8UgKglFgi+hU4CdknBoLOzLyo7SypwNro3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/srait
+
+==================================================================

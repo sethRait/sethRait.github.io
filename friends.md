@@ -11,4 +11,4 @@ displaytop: true
 
 [Julianne](http://burkedesign.us), Interaction Designer @ Helios, artist, wonderful human being, fellow Buffalonian.
 
-[Sofiya](http://sofiya.io), Software Engineer @ EdX, designer extroadinaire, general cool person.
+[Sofiya](https://sofiya.io), PhD student @ University at Buffalo, designer extraordinaire, general cool person.
